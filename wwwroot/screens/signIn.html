@@ -1,0 +1,56 @@
+ 
+ <div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+  
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+          <form>
+  
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control clsMobile" id="floatingInputEmail" placeholder="Email address">
+            </div>
+
+            <hr>
+
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            </div>
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase " type="button" onclick="SignIn()">Sign In</button>
+            </div>
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-link" role="link" type="button" name="op" value="Link 1"  onclick="goToSignUp()"> Sign Up</button>
+            </div>
+            <hr class="my-4">
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase  " type="submit">
+                <i class="fab fa-google me-2"></i> Sign up with Google
+              </button>
+            </div>
+
+            <div class="d-grid text-center">
+              <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                <i class="fab fa-facebook-f me-2"></i> Sign up with Facebook
+              </button>
+            </div>
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-link" role="link" type="button" name="op" value="Link 1"  onclick="gotohome()"> Home</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+<script type="text/javascript">
+  function goToSignUp(){ 
+    $('#content').load("./screens/signUp.html");
+  }
+  function gotohome(){ 
+          window.location.href ="./screens/home.html";
+         // $('#content').load("./screens/signInScreen.html");
+  }
+</script>
