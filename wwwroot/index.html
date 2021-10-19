@@ -1,16 +1,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
-      <title>Find Active Tab using jQuery and Twitter Bootstrap</title>
         <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="./css/site.css">
         <script src="./lib/jquery/dist/jquery.min.js"></script>
         <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script> 
+        <script type="text/javascript">
+
+        let lsFirstimeLoading=true;
+          $(function () {
+          //open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials
+          
+                  debugger
+              if(lsFirstimeLoading){
+                lsFirstimeLoading=false;
+              $("#content").load("./screens/signIn.html", function(responseTxt, statusTxt, jqXHR){});
+              }
+          })
+       </script>
    </head>
    <body>
-    
+     
+
+      <div class="container">
+       
+        <div id="content"> </div>
+      </div>
    </body>
-   <script type="text/javascript">
-    $(function () {
-      alert()
-    })
- </script>
 </html>
