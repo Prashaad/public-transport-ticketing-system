@@ -39,6 +39,11 @@ html {
   .reg-card {
     margin-top: 20%;  
   }
+  #preview{
+    /* width:500px;
+    height: 500px; */
+    margin:0px auto;
+ }
 }
 
 .border-top {
