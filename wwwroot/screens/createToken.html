@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+        <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+            <div class="card-body p-4 p-sm-8 ">
+                <div class="text-center">
+                    <img src="./assets/images/user.png" class="img-thumbnail nex_userLogo rounded" alt="...">
+                    <label for="inputEmail1" class="form-label">UserName</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Create Token</h5>
+          <form>
+  
+            <div class="form-floating mb-3">
+                <input type="hidden" id="userId" value="" />
+                <div class="d-grid mb-2 text-center" style="width: 100%;">
+                    <label for="inputEmail1" class="form-label">Select Token Type</label>
+                    <select class="form-select form-select-lg mb-3" style="width: 100%;">
+                        <option selected>Bar Code</option>
+                        <option value="1">Smart Card</option>
+                        <option value="2">QR Code</option>
+                    </select>
+                </div>
+
+                <div class="d-grid mb-2 text-center">
+                    <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase " type="button" onclick="goToAddCredit()">Add Credit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+.nex_userLogo{
+    width:200px;
+    height:200px;
+    text-align:center;
+    margin-left:0 auto;
+    margin-right:0 auto;
+}
+</style>
+
+<script type="text/javascript">
+    function goToAddCredit(){ 
+      $('#content').load("./screens/addCredit.html");
+    }
+</script>

@@ -1,0 +1,52 @@
+ 
+ <div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+  
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Add Credit To Your Account</h5>
+          <form>
+  
+            <div class="form-floating mb-3">
+                <label for="inputCardNumber" class="form-label">Card Number</label>
+                <input type="number" class="form-control" id="inputCardNumber" placeholder="Card Number">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="inputExpiryDate" class="form-label" id="datepicker">Expiry Date</label>
+                <input type="txet" class="form-control" id="inputExpiryDate" placeholder="Expiry Date">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="inputCVV" class="form-label">CVV</label>
+                <input type="number" class="form-control" id="inputCVV" placeholder="CVV">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="inputNameOnCard" class="form-label">Name on Card</label>
+                <input type="text" class="form-control" id="inputNameOnCard" placeholder="Name on Card">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="inputCreditAmount" class="form-label">Credit Amount</label>
+                <input type="number" class="form-control" id="inputCreditAmount" placeholder="Credit Amount">
+            </div>
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase " type="button" onclick="SignIn()">PAY NOW</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+<script type="text/javascript">
+  function pay(){ 
+    $('#content').load("./screens/signUp.html");
+  }
+  $("#datepicker").datepicker( {
+    format: "mm-yyyy",
+    startView: "months", 
+    minViewMode: "months"
+});
+</script>
