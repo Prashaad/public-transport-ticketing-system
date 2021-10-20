@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    //
-
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
     });
@@ -11,4 +9,7 @@ function check(){
 }
 function signOut(){
 $("#contentbody").load("../index.html");
+}
+function busTegistration(){
+    $("#contentbody").load("busRegistration.html");
 }

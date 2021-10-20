@@ -1,0 +1,53 @@
+<script type="text/javascript" src="../lib/jquery.qrcode/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="../js/busRegistration.js"></script> 
+ 
+<div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+  
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Bus Registration</h5>
+          <form id="frmBusRegistration"> 
+  
+            <div class="form-floating mb-3">
+                <label for="busCode" class="form-label">Bus Unique Code</label>
+                <input type="text" required class="form-control" id="busCode" name="busCode" placeholder="Bus Unique Code">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="numberPlate" class="form-label" id="datepicker">Number Plate</label>
+                <input type="text" required class="form-control" id="numberPlate" name="numberPlate" placeholder="Number Plate">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="companyName" class="form-label">Bus Company Name</label>
+                <input type="text"  required class="form-control" id="companyName" name="companyName" placeholder="Bus Company Name">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="manufacturer" class="form-label">Manufacturer/Model</label>
+                <input type="text" required class="form-control" id="manufacturer" name="manufacturer" placeholder="Manufacturer">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="mnufacturerYear" class="form-label">Manufacturer Year</label>
+                <input type="number" required class="form-control" id="mnufacturerYear" name="mnufacturerYear" placeholder="Manufacturer Year">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="numberofSeats" class="form-label">No. of Seats</label>
+                <input type="number" required class="form-control" id="numberofSeats"  name="numberofSeats" placeholder="No. of Seats">
+            </div>
+            
+            <div class="form-floating mb-3 text-center">
+                <div id="preview-qecode"></div>
+            </div>
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase " type="button" onclick="SaveBus()">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
