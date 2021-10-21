@@ -1,3 +1,5 @@
+var geoLocation;
+var isMinDistanceFound=false;
 var scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5, mirror: false });
 scanner.addListener('scan',function(content){
     getDistanceBusId(content);
@@ -29,9 +31,6 @@ Instascan.Camera.getCameras().then(function (cameras){
     alert(e);
 });
 
-
-var geoLocation;
-var isMinDistanceFound=false;
 function getLocation() {
   if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -62,29 +61,27 @@ $(document).ready(function () {
     arrlocation.push({latitude : 6.975814110046096,longitude:79.87670744998564, busstopid : 14});
     
 });
-////////////////////////////
+
 function getDistanceBusId(qrcontent){
-    arrlocation.forEach(function(item) {
-         getDistance(geoLocation,item,callbackFunction,qrcontent);
-    });
- 
+    if(screenName=="CheckInCheckOut"){ 
+        arrlocation.forEach(function(item) {
+            getDistance(geoLocation,item,callbackFunction,qrcontent);
+        });        
+    }else if(screenName=="VarifyToken"){
+        getValidatePassengerToken();
+    }
 }
 
 function callbackFunction(response, status,content,busstopid) {
-    
     if (status == google.maps.DirectionsStatus.OK) {
-        
-      directionsDisplay.setDirections(response);
-       var distance =directionsDisplay.getDirections().routes[directionsDisplay.getRouteIndex()].legs[0].distance.value / 1000 ;
-       if(distance<= .800 && !isMinDistanceFound){
-        isMinDistanceFound=true;
-       alert(`busID: ${content} , Latitude :${geoLocation.latitude}, Longitude :${geoLocation.longitude} distance : ${distance}`  );
-      }
-       return distance;
-  } else {
-      window.alert('Directions request failed due to ' + status);
-     // return distance;
+        directionsDisplay.setDirections(response);
+        var distance =directionsDisplay.getDirections().routes[directionsDisplay.getRouteIndex()].legs[0].distance.value / 1000 ;
+        if(distance<= .800 && !isMinDistanceFound){
+            isMinDistanceFound=true;
+            alert(`busID: ${content} , Latitude :${geoLocation.latitude}, Longitude :${geoLocation.longitude} distance : ${distance}`  );
+        }
+        return distance;
+    } else {
+        window.alert('Directions request failed due to ' + status);
     }
-//etc
 }
-
