@@ -25,6 +25,17 @@ function busSchedule(){
 function driverRegistration(){
     $("#contentbody").load("driverRegistration.html");
 }
+function createRoute(){
+    screenName="createRoute";
+    $("#contentbody").load("createRoute.html");
+}
+function busSeatReservation(){
+    $("#contentbody").load("busSeatReservation.html");
+}
+function goToHome(){
+   // $("#contentbody").load("home.html");
+   window.location.href ="home.html";
+}
 
 $('#contentbody').click(function(){
     if($('#sidebar').hasClass('active') ){
