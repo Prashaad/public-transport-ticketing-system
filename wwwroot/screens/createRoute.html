@@ -1,0 +1,80 @@
+
+<style>
+body {
+  font-family: Arial;
+  /*   background: #f3f5f6; */
+}
+
+h1 {
+  font-size: 22px;
+}
+
+.row_address {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+input,
+button {
+  font-family: Arial;
+  font-size: 12px;
+  border: 1px solid #4285f4;
+  padding: 8px;
+  outline: none;
+}
+
+input {
+  background: #fff;
+  width: 50vw;
+}
+
+button {
+  background: #4285f4;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+</style>
+<div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+  
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Bus Route Creation</h5>
+          <form id="frmBusRoute"> 
+
+            <div class="form-floating mb-3">
+                <label for="routeNo" class="form-label">Route No.</label>
+                <input type="text" required class="form-control" id="routeNo" name="routeNo" placeholder="Route No.">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="routeName" class="form-label">Route Name</label>
+                <input type="text" required class="form-control" id="routeName" name="routeName" placeholder="Route Name">
+            </div>
+
+            <div class="form-floating mb-3">
+                <button class="btn btn-sm btn-info " id="new">Add Route</button>
+            </div>
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-sm btn-primary btn-login fw-bold text-uppercase " type="button" onclick="SavRoute()">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+
+
+
+<script type="text/javascript" src="../js/googlemaps.js"></script> 
+<script type="text/javascript" src="../js/createRoute.js"></script> 
+  <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCID4vvJAqrUpr0xVZehIBl6im1JCWawXc&v=3.exp&libraries=places"></script>
+<!-- https://maps.googleapis.com/maps/api/js?key=AIzaSyCID4vvJAqrUpr0xVZehIBl6im1JCWawXc" -->
+</script>  
+  
