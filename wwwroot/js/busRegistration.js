@@ -14,7 +14,7 @@ function generteQRCode(){
 
 function SaveBus(){
     var param = convertFormToJson($("#frmBusRegistration"));
-debugger
+
     $('#preview-qecode').html("");
     if(param.busCode){
         $('#preview-qecode').qrcode(param.busCode);
@@ -24,12 +24,13 @@ debugger
     }
     if(!param.numberofSeats){
         alert("Please add no of seeats to proceed!");
+        return false;
     }
 
     var canvas = $('#preview-qecode canvas');
     var img = canvas.get(0).toDataURL("image/png");
     param.qrcode =img.replace("image/png", "" ).replace("data:;base64,","");
-    debugger
+    
     downloadQRCode(img, param.busCode);
 }
 

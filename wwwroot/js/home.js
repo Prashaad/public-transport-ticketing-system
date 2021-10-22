@@ -12,13 +12,20 @@ function check(){
 function signOut(){
 $("#contentbody").load("../index.html");
 }
-function busTegistration(){
+function busRegistration(){
     $("#contentbody").load("busRegistration.html");
 }
 function varifyToken(){
     screenName="VarifyToken";
     $("#contentbody").load("verifyToken.html");
 }
+function busSchedule(){
+    $("#contentbody").load("busSchedule.html");
+}
+function driverRegistration(){
+    $("#contentbody").load("driverRegistration.html");
+}
+
 $('#contentbody').click(function(){
     if($('#sidebar').hasClass('active') ){
         $('#sidebar').toggleClass('active');
