@@ -36,6 +36,7 @@ function goToHome(){
    // $("#contentbody").load("home.html");
    window.location.href ="home.html";
 }
+
 $('#contentbody').click(function(){
     if($('#sidebar').hasClass('active') ){
         $('#sidebar').toggleClass('active');
