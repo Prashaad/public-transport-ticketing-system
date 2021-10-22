@@ -32,8 +32,7 @@ function createRoute(){
 function busSeatReservation(){
     $("#contentbody").load("busSeatReservation.html");
 }
-function goToHome(){
-   // $("#contentbody").load("home.html");
+function goToHome(){ 
    window.location.href ="home.html";
 }
 
