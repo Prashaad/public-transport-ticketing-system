@@ -6,24 +6,17 @@
         <script src="./lib/jquery/dist/jquery.min.js"></script>
         <script src="./lib/bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript">
-
-        let lsFirstimeLoading=true;
-          $(function () {
-          //open -na Google\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials
-          
-                  debugger
+            let lsFirstimeLoading=true;
+            $(function () {
               if(lsFirstimeLoading){
                 lsFirstimeLoading=false;
-              $("#content").load("./screens/signIn.html", function(responseTxt, statusTxt, jqXHR){});
+                $("#content").load("./screens/signIn.html", function(responseTxt, statusTxt, jqXHR){});
               }
-          })
-       </script>
+            })
+        </script>
    </head>
    <body>
-     
-
       <div class="container">
-       
         <div id="content"> </div>
       </div>
    </body>
