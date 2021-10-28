@@ -12,7 +12,7 @@ function generteQRCode(){
     }
 }
 
-function SaveBus(){
+async function SaveBus(){
     var param = convertFormToJson($("#frmBusRegistration"));
 
     $('#preview-qecode').html("");
@@ -22,7 +22,7 @@ function SaveBus(){
         alert("Please provide a busCode !");
         return false;
     }
-    if(!param.numberofSeats){
+    if(!param.numberOfSeats){
         alert("Please add no of seeats to proceed!");
         return false;
     }
@@ -32,6 +32,14 @@ function SaveBus(){
     param.qrcode =img.replace("image/png", "" ).replace("data:;base64,","");
     
     downloadQRCode(img, param.busCode);
+    try{
+        param.id=parseInt( param.id);
+        param.mnufacturerYear=parseInt( param.mnufacturerYear);
+        param.numberOfSeats=parseInt( param.numberOfSeats);
+        var result =await postApiAjaxCall("Bus",param) ; 
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 
