@@ -1,5 +1,5 @@
-﻿const apiRootUrl="http://transportmanagementsystem-env-1.eba-pg2bzzfa.us-east-1.elasticbeanstalk.com/api/";
-//"";
+﻿ //const apiRootUrl="https://localhost:5001/api/";
+const apiRootUrl="http://transportmanagementsystem-env-1.eba-pg2bzzfa.us-east-1.elasticbeanstalk.com/api/";
 function convertFormToJson($form){
     var unindexed_array = $form.serializeArray();
     var indexed_array = {};
