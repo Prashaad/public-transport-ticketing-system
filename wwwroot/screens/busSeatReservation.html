@@ -1,0 +1,48 @@
+<script type="text/javascript" src="../js/busSeatReservation.js"></script> 
+
+<div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+  
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Bus Seat Reservation</h5>
+          <form id="frmBusSeatReservation"> 
+  
+            <div class="form-floating mb-3">
+                <label for="busRoute" class="form-label">Bus Route</label>
+                <select class="form-control"  name="busRoute" required >
+                    <option>Select...</option>
+                    <option>100</option>
+                    <option>177</option>
+                    <option>144</option>
+                </select>
+            </div>
+
+            <div class="form-floating mb-3">
+              <label for="availableSeats" class="form-label">Available Seats</label>
+              <input type="number" required class="form-control" id="availableSeats" name="availableSeats" placeholder="Available Seats">
+           </div>
+
+           <div class="form-floating mb-3">
+             <label for="reservingSeats" class="form-label">Reserving Seats</label>
+            <input type="number" required class="form-control" id="reservingSeats" name="reservingSeats" placeholder="Reserving Seats">
+          </div>
+
+            <div class="form-floating mb-3">
+                <label for="time" class="form-label">Time</label>
+                <select class="form-control"  name="time" required >
+                  <option>Select...</option>
+                  <option>10:10</option>
+                  <option>14:20</option>
+                  <option>17:45</option>
+              </select>
+            </div>
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-sm btn-primary btn-login fw-bold text-uppercase " type="button" onclick="SaveReservingSeats()">Book</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 

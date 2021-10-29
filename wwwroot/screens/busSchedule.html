@@ -1,0 +1,53 @@
+<script type="text/javascript" src="../js/busSchedule.js"></script> 
+
+<div class="row">
+    <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
+      <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+  
+        <div class="card-body p-4 p-sm-8 ">
+          <h5 class="card-title text-center mb-5 fw-light fs-5">Bus Schedule Creation</h5>
+          <form id="frmBusSchedule"> 
+  
+            <div class="form-floating mb-3">
+                <label for="busRoute" class="form-label">Bus Route</label>
+                <select class="form-control"  name="busRoute" required >
+                    <option>Select...</option>
+                    <option>100</option>
+                    <option>177</option>
+                    <option>144</option>
+                </select>
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="fromDate" class="form-label">From Date</label>
+                <input type="text" required class="form-control" id="fromDate" name="fromDate" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="toDate" class="form-label">To Date</label>
+                <input type="text"  required class="form-control" id="toDate" name="toDate" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="time" class="form-label">Time</label>
+                <input type="text" required class="form-control" id="time" name="time" placeholder="HH:MM">
+            </div>
+
+            <div class="form-floating mb-3">
+                <label for="driver" class="form-label">Driver</label>
+                <select class="form-control"  name="driver" required >
+                    <option>Select...</option>
+                    <option>Jhon Doe</option>
+                    <option>David</option>
+                    <option>Alex</option>
+                </select>
+            </div>
+
+            <div class="d-grid mb-2 text-center">
+              <button class="btn btn-sm btn-primary btn-login fw-bold text-uppercase " type="button" onclick="SavSchedule()">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> 
