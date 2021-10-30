@@ -37,8 +37,12 @@ async function SaveBus(){
         param.mnufacturerYear=parseInt( param.mnufacturerYear);
         param.numberOfSeats=parseInt( param.numberOfSeats);
         var result =await postApiAjaxCall("Bus",param) ; 
+        if(result> 0){
+            alert("Bus Saved Successfully!");
+            window.location.href ="home.html";
+        }    
     } catch(err) {
-        console.log(err);
+       alert("Failed to Save!");
     }
 }
 
