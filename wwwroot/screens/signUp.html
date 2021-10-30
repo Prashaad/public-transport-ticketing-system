@@ -1,4 +1,4 @@
-
+<script type="text/javascript" src="../wwwroot/js/signUp.js"></script> 
 
       <div class="row">
         <div class="col-lg-10 col-xl-12 col-sm-12 reg-card">
@@ -7,28 +7,28 @@
             </div>
             <div class="card-body p-4 p-sm-8" >
               <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-              <form>
+              <form id="frmSignUp">
   
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="floatingInputUsername" placeholder="Username" required autofocus>
+                  <input type="text" name="username" class="form-control" id="floatingInputUsername" placeholder="Username" required autofocus>
                   </div>
   
                 <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInputEmail" placeholder="Email Address">
+                  <input type="email" name="email" class="form-control" id="floatingInputEmail" placeholder="Email Address">
                  </div>
   
                 <hr>
   
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                 </div>
   
                 <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                  <input type="password" name="rePassword" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
                  </div>
   
                 <div class="d-grid mb-2 text-center">
-                  <button class="btn btn-sm btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
+                  <button class="btn btn-sm btn-primary btn-login fw-bold text-uppercase" type="submit" onclick="SignUp()">Register</button>
                 </div>
   
                 <div class="d-grid mb-1 text-center">

@@ -1,20 +1,24 @@
- 
+<!-- <script src="../wwwroot/js/site.js"></script>
+<script type="text/javascript" src="../wwwroot/js/signIn.js"></script>  -->
+
+<script type="text/javascript" src="../js/signIn.js"></script> 
+
  <div class="row">
     <div class="col-lg-10 col-xl-12 col-sm-12 login-card ">
       <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
   
         <div class="card-body p-4 p-sm-8 ">
           <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-          <form>
+          <form id="frmSignIn">
   
             <div class="form-floating mb-3">
-              <input type="email" class="form-control clsMobile" id="floatingInputEmail" placeholder="Email address">
+              <input type="email" name="username" class="form-control clsMobile" id="floatingInputEmail" placeholder="Email address">
             </div>
 
             <hr>
 
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
             </div>
 
             <div class="d-grid mb-2 text-center">
