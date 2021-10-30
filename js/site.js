@@ -54,7 +54,7 @@ function  getApiAjaxCall(url,data){
         // }
     });
 }
-function setLocaStorage(key, value){
+function setLocalStorage(key, value){
 localStorage.setItem(`${key}`, value);
 }
 function getLocalStorage(key){
