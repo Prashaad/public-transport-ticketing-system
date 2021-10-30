@@ -10,7 +10,8 @@ function convertFormToJson($form){
 
     return indexed_array;
 }
-
+function clearForm(fromid){
+}
 function downloadQRCode(image , filenameWithoutExtention){
      var link = document.createElement('a');
     link.download = `bus-qrcode-${filenameWithoutExtention}.png`;
@@ -34,25 +35,24 @@ function  postApiAjaxCall(url,data){
         {
             debugger
             return{data : request , isSuccess:false};
-         }
+     }
     });
 }
-function  getApiAjaxCall(url,data){
+function  getApiAjaxCall(url,data=""){
   const apiUrl =apiRootUrl+ url;
-  return  $.ajax({
+  return $.ajax({
         type : 'GET',
         url : apiUrl,
         dataType:'json',
         contentType: "application/json",
         data : JSON.stringify( data),
-        // ,
-        // success : function(data) {              
-        //     return {data : data , isSuccess:true};
-        // },
-        // error : function(request,error)
-        // {
-        //     return{data : request , isSuccess:false};
-        // }
+        success : function(data) {              
+            return {data : data , isSuccess:true};
+        },
+        error : function(request,error)
+        {
+            return{data : request , isSuccess:false};
+        }
     });
 }
 function setLocalStorage(key, value){
@@ -63,4 +63,25 @@ function getLocalStorage(key){
 }
 function removeLocalStorage(key){
     return localStorage.removeItem(key);
+}
+
+function getLoggedInUserId(){
+    const jsonUerDetails =getLocalStorage("userToken");
+    let userDetails;
+    if(jsonUerDetails!=null && jsonUerDetails!=undefined){
+        userDetails= JSON.parse(jsonUerDetails);
+        userDetails.userid = parseInt(userDetails.userid);
+    }else{
+        userDetails={token : "", userid: 0};
+    }
+   return userDetails;
+}
+function setLoggedInUserDetails(userdetails){
+    const jsonString =JSON.stringify({
+        userid : parseInt(userdetails.userId),
+        usertype : parseInt(userdetails.userType),
+        username: userdetails.username,
+        token:userdetails.token
+       });
+       setLocalStorage("userToken",jsonString);
 }

@@ -10,6 +10,7 @@ function check(){
     $("#contentbody").load("qrscan.html");
 }
 function signOut(){
+    removeLocalStorage("userToken");
 $("#contentbody").load("../index.html");
 }
 function busRegistration(){

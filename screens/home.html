@@ -21,6 +21,7 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/site.js"></script>
    
 </head>
@@ -35,50 +36,19 @@
 
             <ul class="list-unstyled components">
                 <p>Online Bus System</p>
-                <!--  <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                   <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
-                </li> -->
                 <li class="active">
                     <a href="#" onclick="goToHome()">Hone</a>
                 </li>
                 <li>
                     <a href="#" onclick="check()">Checkin / Checkout</a>
                 </li>
-
-            <!-- <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                 <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
-                </li> 
-                    </ul> 
-                </li>--> 
       
                 <li>
-                    <a href="#" onclick="busRegistration()">Bus Registration</a>
+                    <a href="#" onclick="varifyToken()">Varify Passenger</a>
                 </li>
 
                 <li>
-                    <a href="#" onclick="varifyToken()">Varify Passenger</a>
+                    <a href="#" onclick="busRegistration()">Bus Registration</a>
                 </li>
 
                 <li>
@@ -96,12 +66,7 @@
                 <li>
                     <a href="#" onclick="busSeatReservation()">Bus Seat Reservation</a>
                 </li>
-                <li>
-                    <a href="#" onclick="driverRegistration()">Driver Registration</a>
-                </li>
-                <li>
-                    <a href="#" onclick="busSchedule()">Bus Schedule</a>
-                </li>
+                
             </ul>
             
             <ul class="list-unstyled CTAs">
