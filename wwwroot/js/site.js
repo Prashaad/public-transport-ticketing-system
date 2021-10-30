@@ -1,5 +1,5 @@
-﻿ //const apiRootUrl="https://localhost:5001/api/";
-const apiRootUrl="http://transportmanagementsystem-env-1.eba-pg2bzzfa.us-east-1.elasticbeanstalk.com/api/";
+﻿ const apiRootUrl="https://localhost:5001/api/";
+//const apiRootUrl="http://transportmanagementsystem-env-1.eba-pg2bzzfa.us-east-1.elasticbeanstalk.com/api/";
 function convertFormToJson($form){
     var unindexed_array = $form.serializeArray();
     var indexed_array = {};
@@ -36,11 +36,30 @@ function  postApiAjaxCall(url,data){
         // }
     });
 }
+function  getApiAjaxCall(url,data){
+  const apiUrl =apiRootUrl+ url;
+  return  $.ajax({
+        type : 'GET',
+        url : apiUrl,
+        dataType:'json',
+        contentType: "application/json",
+        data : JSON.stringify( data),
+        // ,
+        // success : function(data) {              
+        //     return {data : data , isSuccess:true};
+        // },
+        // error : function(request,error)
+        // {
+        //     return{data : request , isSuccess:false};
+        // }
+    });
+}
 function setLocaStorage(key, value){
-
 localStorage.setItem(`${key}`, value);
 }
 function getLocalStorage(key){
-
     return localStorage.getItem(key);
+}
+function removeLocalStorage(key){
+    return localStorage.removeItem(key);
 }

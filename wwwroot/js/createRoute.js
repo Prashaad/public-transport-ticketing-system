@@ -19,18 +19,24 @@ function SavRoute(){
     }
     var arrRoutes=[];
     $('.row_address').each(function(i,e) { 
-        var busStopName=$(this).children().val();
-        var latitude=$(this).children().attr("lat");
-        var longitude= $(this).children().attr("lng");
-        if(busStopName && latitude && longitude){
-        arrRoutes.push({ busStopName :   busStopName, latitude: latitude   , longitude: longitude });
+        var busStopName=$($(this).children().children()[0]).val();//$(this).children().children().val();
+        var latitude=$($(this).children().children()[0]).attr("lat");//$(this).children().children().attr("lat");
+        var longitude= $($(this).children().children()[0]).attr("lng");//$(this).children().children().attr("lng");
+        var amount=$($(this).children().children()[1]).val();
+        if(busStopName && latitude && longitude && amount >=0){
+        arrRoutes.push({ busStopName :   busStopName, latitude: latitude   , longitude: longitude, amount : parseInt(amount) });
         }else{
             alert(`Opps! something went wrrong with the route ${busStopName}`);
             return false;
         }
      });
      param.listOfRoutes =arrRoutes;
-     console.log(param);
+     try{
+        param.id=parseInt( param.id);
+        var result =await postApiAjaxCall("Route",param) ; 
+    } catch(err) {
+        console.log(err);
+    }
 }
 
 /*

@@ -67,12 +67,26 @@ function addAddress() {
   $("#new").on("click", function() {
 
     var inc = $(".row_address").length + 1,
-      $newAddressRow = `
-            <div id="${inc}" class="row_address" >
-                      <input type="text" name="route${inc}" placeholder="Route...">
-              <button class="remove">X</button>
-          </div>
-            `;
+      // $newAddressRow = `
+      //       <div id="${inc}" class="row_address col-sm-02" >
+      //                 <input type="text" name="route${inc}" placeholder="Route...">
+      //                 <input type="number" name="amount" placeholder="Amount...">
+      //         <button class="remove">X</button>
+      //     </div>
+      //       `;
+      $newAddressRow = `<div class="form-floating mb-3">\
+                          <div id="1" class="row_address row">\
+                            <div class="col-4">\
+                              <input type="text" name="route${inc}" placeholder="Route..." class="pac-target-input" autocomplete="off">\
+                            </div>\
+                            <div class="col-4">\
+                              <input type="number" name="amount${inc}" placeholder="Amount...">
+                            </div>\
+                            <div class="col-2">\
+                              <button class="remove">X</button>\
+                            </div>\
+                        </div>`
+
 
     $($newAddressRow).insertBefore($(this));
 
