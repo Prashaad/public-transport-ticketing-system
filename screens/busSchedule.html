@@ -7,25 +7,22 @@
         <div class="card-body p-4 p-sm-8 ">
           <h5 class="card-title text-center mb-5 fw-light fs-5">Bus Schedule Creation</h5>
           <form id="frmBusSchedule"> 
-  
+            <input type="hidden" value="0" name="id" />
             <div class="form-floating mb-3">
-                <label for="busRoute" class="form-label">Bus Route</label>
-                <select class="form-control"  name="busRoute" required >
+                <label for="RouteId" class="form-label">Bus Route</label>
+                <select id ="routeid" class="form-control"  name="RouteId" required >
                     <option>Select...</option>
-                    <option>100</option>
-                    <option>177</option>
-                    <option>144</option>
                 </select>
             </div>
 
             <div class="form-floating mb-3">
-                <label for="fromDate" class="form-label">From Date</label>
-                <input type="text" required class="form-control" id="fromDate" name="fromDate" placeholder="YYYY-MM-DD">
-            </div>
+                <label for="StartTime" class="form-label">From Date</label>
+                <input type="text" required class="form-control" id="StartTime" name="StartTime" placeholder="YYYY-MM-DD">
+              </div>
 
             <div class="form-floating mb-3">
-                <label for="toDate" class="form-label">To Date</label>
-                <input type="text"  required class="form-control" id="toDate" name="toDate" placeholder="YYYY-MM-DD">
+                <label for="EndTime" class="form-label">To Date</label>
+                <input type="text"  required class="form-control" id="EndTime" name="EndTime" placeholder="YYYY-MM-DD">
             </div>
 
             <div class="form-floating mb-3">
@@ -34,12 +31,9 @@
             </div>
 
             <div class="form-floating mb-3">
-                <label for="driver" class="form-label">Driver</label>
-                <select class="form-control"  name="driver" required >
+                <label for="DriverId" class="form-label">Driver</label>
+                <select  id="driverid" class="form-control"  name="DriverId" required >
                     <option>Select...</option>
-                    <option>Jhon Doe</option>
-                    <option>David</option>
-                    <option>Alex</option>
                 </select>
             </div>
 

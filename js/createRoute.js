@@ -32,9 +32,12 @@ async function SavRoute(){
      });
      param.listOfRoutes =arrRoutes;
      try{
-         debugger
         param.id=parseInt( param.id);
         var result =await postApiAjaxCall("Route",param) ; 
+        if(result> 0){
+            alert("Route Saved Successfully!");
+            window.location.href ="home.html";
+        }
     } catch(err) {
         console.log(err);
     }
