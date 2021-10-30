@@ -3,7 +3,7 @@ $(document).ready(function () {
     $('#sidebarCollapse').on('click', function () { 
         $('#sidebar').toggleClass('active');
     });
-    $("#contentbody").html("<div class='text-center'><h1>Well Come To</br> Online Bus Ticket System</h1></div>");
+    $("#contentbody").html("<div class='text-center'><h1>Welcome To</br> Online Bus Ticket System</h1></div>");
 });
 function check(){
     screenName="CheckInCheckOut"; 
