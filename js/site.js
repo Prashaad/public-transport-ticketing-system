@@ -26,14 +26,15 @@ function  postApiAjaxCall(url,data){
         dataType:'json',
         contentType: "application/json",
         data : JSON.stringify( data),
-        // ,
-        // success : function(data) {              
-        //     return {data : data , isSuccess:true};
-        // },
-        // error : function(request,error)
-        // {
-        //     return{data : request , isSuccess:false};
-        // }
+        success : function(data) {     
+            debugger         
+            return {data : data , isSuccess:true};
+        },
+        error : function(request,error)
+        {
+            debugger
+            return{data : request , isSuccess:false};
+         }
     });
 }
 function  getApiAjaxCall(url,data){
