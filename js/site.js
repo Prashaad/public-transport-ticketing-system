@@ -50,7 +50,7 @@ function  getApiAjaxCall(url,data=""){
             return {data : data , isSuccess:true};
         },
         error : function(request,error)
-        {
+        {debugger
             return{data : request , isSuccess:false};
         }
     });
