@@ -1,4 +1,4 @@
-function SavRoute(){
+async function SavRoute(){
     
     var formData= convertFormToJson($("#frmBusRoute"));
     var param={};
@@ -24,7 +24,7 @@ function SavRoute(){
         var longitude= $($(this).children().children()[0]).attr("lng");//$(this).children().children().attr("lng");
         var amount=$($(this).children().children()[1]).val();
         if(busStopName && latitude && longitude && amount >=0){
-        arrRoutes.push({ busStopName :   busStopName, latitude: latitude   , longitude: longitude, amount : parseInt(amount) });
+        arrRoutes.push({ name :   busStopName, latitude: latitude   , longitude: longitude, amount : parseInt(amount) });
         }else{
             alert(`Opps! something went wrrong with the route ${busStopName}`);
             return false;
@@ -34,6 +34,10 @@ function SavRoute(){
      try{
         param.id=parseInt( param.id);
         var result =await postApiAjaxCall("Route",param) ; 
+        if(result> 0){
+            alert("Route Saved Successfully!");
+            window.location.href ="home.html";
+        }
     } catch(err) {
         console.log(err);
     }
