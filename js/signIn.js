@@ -9,8 +9,17 @@ async function SignIn(){
         var result = await postApiAjaxCall("Authentication",param) ;
         if(result!=null){
             //To-Do - Get the token by passing the userId
-            result.token="3fa85f64-5717-4562-b3fc-2c963f66afa6";
-            setLoggedInUserDetails(result);
+            var token = getApiAjaxCall("GetTokenByUser", "/"+result.userId);
+            if(token!=null){
+                result.token = token.tokenId;
+                setLoggedInUserDetails(result);
+            }
+            else{
+                alert("You have no Active Token. Please Contact Support!");
+            }
+
+            // result.token="3fa85f64-5717-4562-b3fc-2c963f66afa6";
+            // setLoggedInUserDetails(result);
             window.location.href ="./screens/home.html";
         }else{
             alert("Login Failed!");

@@ -16,10 +16,19 @@ async function SignIn(){
   }
 
   try{
-      var result = await postApiAjaxCall("Authentication",param) ;
+      param.userId = 0;
+      param.userType = 1;
+      param.name = param.username;
 
-      let jsonstring = JSON.stringify({'token':"3fa85f64-5717-4562-b3fc-2c963f66afa6", 'userid' : 1});
-      setLocalStorage("userToken",jsonstring);
+      var result = await postApiAjaxCall("Passenger",param);
+
+      if(result!=null){
+        result.token="3fa85f64-5717-4562-b3fc-2c963f66afa6";
+        setLoggedInUserDetails(result);
+        window.location.href ="./screens/addCredit.html";
+      }else{
+        alert("SignUp Failed. Contact Support!");
+      }       
 
   } catch(err) {
       console.log(err);
