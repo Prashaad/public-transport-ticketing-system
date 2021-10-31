@@ -20,7 +20,7 @@ async function SaveDriver(){
         return false;
     }
     params.Username	=params.Fullname; 
-    params.	UserType=2;
+    //params.	UserType=2;
     params.Password="123";
     params.DateOfBirth=moment(params.DateOfBirth).toDate();
     try{ 

@@ -7,20 +7,28 @@ async function SignIn(){
 
     try{ 
         var result = await postApiAjaxCall("Authentication",param) ;
+        debugger
         if(result!=null){
-            //To-Do - Get the token by passing the userId
-            var token = getApiAjaxCall("GetTokenByUser", "/"+result.userId);
-            if(token!=null){
+            var isTokenExist=false;
+            debugger
+            if(result.userType ==1){
+                var token = await getApiAjaxCall("GetTokenByUser"+"/"+result.userId);
                 result.token = token.tokenId;
-                setLoggedInUserDetails(result);
+                if( result?.token!=null &&  result?.token!=""){
+                    isTokenExist=true;
+                }
+            }else{
+                isTokenExist=true;
             }
-            else{
+              
+                
+            if(!isTokenExist){
                 alert("You have no Active Token. Please Contact Support!");
             }
-
-            // result.token="3fa85f64-5717-4562-b3fc-2c963f66afa6";
-            // setLoggedInUserDetails(result);
-            window.location.href ="./screens/home.html";
+            else{
+                setLoggedInUserDetails(result);
+                window.location.href ="./screens/home.html";  
+            }
         }else{
             alert("Login Failed!");
         }     
